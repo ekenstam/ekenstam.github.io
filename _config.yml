@@ -3,23 +3,23 @@ title: Todd Ekenstam
 url: "http://ekenstam.github.io"
 baseurl: ""
 description: >
-  One or more sentences introducing this blog.
+  Todd Ekenstam's blog on software development and quality engineering.
 
 # Your information
 email: todd_ekenstam@intuit.com
-#email: tekenstam@gmail.com
 author: Todd Ekenstam
-avatar: "//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
-profile: One sentence introducing yourself.
+avatar: "//www.gravatar.com/avatar/40fa67613bdf295e20afb402dca91739?d=mm&s=135"
+profile: Todd is a software engineer at Intuit working on improving the quality of web services and web applications with a focus on test automation, static code analysis and continuous integration.
 #twitter_username: twitter_username
 github_username: ekenstam
+linkedin_username: tekenstam
 
 # Comment Service (Disqus or 多说)
 #  choose one and un-comment the line to active it
 #disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
 #duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
 
-permalink: /archivers/:title
+permalink: /blog/:year-:month-:day/:title
 gems:
  - jekyll-paginate
  - jekyll-gist

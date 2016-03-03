@@ -2,15 +2,24 @@
   <img class="avatar" src="{{ site.avatar }}" alt="{{ site.author }}">
   <div class="col-box-title name">{{ site.author }}</div>
   <p>{{ site.profile }}</p>
-  <p class="contact">
+  <p class="contact-new">
+    {% if site.linkedin_username %}
+    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+	<i class="fa fa-linkedin"></i> LinkedIn
+    </a>
+    {% endif %}
     {% if site.github_username %}
-    <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+    <a href="https://github.com/{{ site.github_username }}">
+	<i class="fa fa-github"></i> GitHub
+    </a>
     {% endif %}
     {% if site.twitter_username %}
     <a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a>
     {% endif %}
     {% if site.email %}
-    <a href="mailto:{{ site.email }}">Email</a>
+    <a href="mailto:{{ site.email }}">
+	<i class="fa fa-envelope"></i> Email
+    </a>
     {% endif %}
   </p>
 </div>
