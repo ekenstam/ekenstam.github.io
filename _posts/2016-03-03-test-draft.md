@@ -11,3 +11,6 @@ Ideas for blog articles:
 * Adding reporting of the above to your Jenkins jobs. 
 * Writing an AuthFilter for REST-assured. 
 * Implementing the Page Object Model with Protractor
+* A reference CI/CD workflow
+* Writing functional UI tests with Protractor
+* 
