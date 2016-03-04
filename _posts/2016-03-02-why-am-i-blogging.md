@@ -6,7 +6,7 @@ categories:	jekyll blogging
 ---
 Ok, so why start blogging now?
 
-I've always enjoyed writing and have considered starting a blog for several years now. In 2007 I created a [site on BlogSpot][oldblog] mainly focused on my family life. But this was when Facebook was just starting to get wider acceptance and it seemed that sharing pictures of my kids was best done using that or similar social media sites so that never really got off the ground. On the professional side, I spent some time building out my LinkedIn page but still I was interested in something with a more narative format.
+I've always enjoyed writing and have considered starting a blog for several years now. In 2007 I created a site on BlogSpot mainly focused on my family life. But this was when Facebook was just starting to get wider acceptance and that seemed like a better tool for sharing wirh family and friends. On the professional side, I spent some time building out my LinkedIn page but still I was interested in something with a more narative format.
 
 Not too long ago I used my home NAS to host a WordPress page. I also looked into hosting a WordPress server on AWS or subscribing to one of the many WordPress hosting services. But for the type of blogging I was interested to do (technical with lots of code snippets) it WordPress didn't really seem to fit the bill. It also seems kinda over-kill for what I wanted to do.
 
