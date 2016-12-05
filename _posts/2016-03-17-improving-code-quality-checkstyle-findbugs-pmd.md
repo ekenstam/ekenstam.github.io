@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Improving Java Code Quality Through Static Code Analysis"
+thumbnail: /assets/static-analysis/thumbnail.png
 published: true
 categories: ['Software Development']
 tags: java checkstyle findbugs pmd
