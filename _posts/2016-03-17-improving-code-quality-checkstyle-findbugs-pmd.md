@@ -303,8 +303,8 @@ Eing Ong has written a blog on adding enforcement of thresholds to [pre-commit c
 
 ## Other Non-Java Tools
 
-JSHint Plug-in - http://github.eclipsesource.com/jshint-eclipse/updates/
-JSHint/JSLint
+* JSHint Plug-in - http://github.eclipsesource.com/jshint-eclipse/updates/
+* JSHint/JSLint
 
 <!-- Link references -->
 [wiki-page]: https://en.wikipedia.org/wiki/Static_program_analysis
