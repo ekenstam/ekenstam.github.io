@@ -168,59 +168,59 @@ The following plugins are available for Maven:
 Here is what is needed to be added to your parent POM:
 
 ```xml
-	<properties>
-		<checkstyle.version>2.17</checkstyle.version>
-		<findbugs.version>3.0.3</findbugs.version>
-		<pmd.version>3.6</pmd.version>
-	</properties>
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>${checkstyle.version}</version>
-					<executions>
-						<execution>
-							<id>checkstyle</id>
-							<goals>
-								<goal>checkstyle</goal>
-							</goals>
-							<phase>verify</phase>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>findbugs-maven-plugin</artifactId>
-					<version>${findbugs.version}</version>
-					<executions>
-						<execution>
-							<id>findbugs</id>
-							<goals>
-								<goal>findbugs</goal>
-							</goals>
-							<phase>verify</phase>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-pmd-plugin</artifactId>
-					<version>${pmd.version}</version>
-					<executions>
-						<execution>
-							<id>pmd</id>
-							<goals>
-								<goal>pmd</goal>
-							</goals>
-							<phase>verify</phase>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+<properties>
+	<checkstyle.version>2.17</checkstyle.version>
+	<findbugs.version>3.0.3</findbugs.version>
+	<pmd.version>3.6</pmd.version>
+</properties>
+<build>
+	<pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${checkstyle.version}</version>
+				<executions>
+					<execution>
+						<id>checkstyle</id>
+						<goals>
+							<goal>checkstyle</goal>
+						</goals>
+						<phase>verify</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs.version}</version>
+				<executions>
+					<execution>
+						<id>findbugs</id>
+						<goals>
+							<goal>findbugs</goal>
+						</goals>
+						<phase>verify</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>${pmd.version}</version>
+				<executions>
+					<execution>
+						<id>pmd</id>
+						<goals>
+							<goal>pmd</goal>
+						</goals>
+						<phase>verify</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</pluginManagement>
+</build>
 ```
 
 If for some reason you do not want the tools to run on every build (e.g. you have a very large codebase and the tools slow down the build) you can omit the `<executions>` section from the POM. In that case you will need to specify the tools goals explicitly when running the maven build.
@@ -237,22 +237,22 @@ Refer to the documentation for each Maven plugin for more information on additio
 Once the configuration of the plugs is declared in `pluginManagement`, the plugins just need to be added to the build of each child pom as desired.
 
 ```xml
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-checkstyle-plugin</artifactId>
+		</plugin>
+		<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>findbugs-maven-plugin</artifactId>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-pmd-plugin</artifactId>
+		</plugin>
+	</plugins>
+</build>
 ```
 
 # Report in Jenkins
@@ -273,15 +273,15 @@ If you already have a Jenkins commit job and you included the tools in the tools
 
 But to be sure, you can list the tools goals explicitly on the Maven command like the following:
 
-![jenkins-build-maven](../assets/static-analysis/jenkins-build-maven.jpg)
+![jenkins-build-maven](/assets/static-analysis/jenkins-build-maven.jpg)
 
 ## Publish Analysis Results in Jenkins Job
 
 To publish the results of the tools you add a post-build step for each tool reporter.  Note that you need to install the appropriate Jenkins plugin before these options are available.
 
-![jenkins-maven-postbuild-menu](../assets/static-analysis/jenkins-postbuild-menu.jpg)
+![jenkins-maven-postbuild-menu](/assets/static-analysis/jenkins-postbuild-menu.jpg)
 
-![jenkins-postbuild-findbugs](../assets/static-analysis/jenkins-postbuild-findbugs.jpg)
+![jenkins-postbuild-findbugs](/assets/static-analysis/jenkins-postbuild-findbugs.jpg)
 
 # Enforce in Jenkins
 
@@ -293,7 +293,7 @@ The configuration of all the result publishers are similar.  The below screensho
 
 The below screenshots shows the advanced configuration that will mark the build as failed for one _new_ high priority violation or unstable for five and failed for ten _new_ violations of any priority, using the last stable build as a reference.  This type of configuration let's you "grandfather" existing violations, only changing the build state for new violations.
 
-![jenkins-postbuild-findbugs-relativethresholds](../assets/static-analysis/jenkins-postbuild-findbugs-relativethresholds.jpg)
+![jenkins-postbuild-findbugs-relativethresholds](/assets/static-analysis/jenkins-postbuild-findbugs-relativethresholds.jpg)
 
 # Enforce in Pre-commit Checks
 
