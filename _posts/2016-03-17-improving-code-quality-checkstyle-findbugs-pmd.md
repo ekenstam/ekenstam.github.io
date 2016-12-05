@@ -6,7 +6,7 @@ categories: ['Software Development']
 tags: java checkstyle findbugs pmd
 ---
 
-One of the easiest ways to improve code quality is to implement automated static code analysis to inspect your code and automatically identify potential problems. Static code analysis can identify violation of coding standards, inefficient code and possible coding errors without having to write any tests.  Utilizing these tools during the software development process will allow potential defects to be identified and fixed early with minimal effort and cost and should be part of the quality process.
+One of the easiest ways to improve code quality is to implement automated static code analysis to inspect your code and automatically identify potential problems. Static code analysis can identify violation of coding standards, inefficient code and possible coding errors without having to write any tests. Utilizing these tools during the software development process will allow potential defects to be identified and fixed early with minimal effort and cost and should be part of the quality process.
 
 # Why Use Static Code Analysis?
 
@@ -15,7 +15,7 @@ So, what is [Static Code Analysis][wiki-page]? It doesn't have anything to do wi
 > [Never send a human to do a machine’s job.](http://quotegeek.com/quotes-from-movies/the-matrix/1284/)
 > -- <cite>Agent Smith, The Matrix</cite>
 
-I agree with Agent Smith that machine's are much better suited to some tasks than humans are.  These tools can search through every line of code looking for patterns that indicate a possible issue.  It is impossible to have the same degree of thoroughness without the automation of these tools. That said, static code analysis is not a replacement for code review by a human, but it should be used as a first-pass to find certain categories of issues prior to code review. It is also not a replacement for unit or functional testing. It can, however, improve the overall quality of your code by automatically identifying issues that have rather straight-forward fixes and help guide developers to follow coding best practices.
+I agree with Agent Smith that machine's are much better suited to some tasks than humans are. These tools can search through every line of code looking for patterns that indicate a possible issue. It is impossible to have the same degree of thoroughness without the automation of these tools. That said, static code analysis is not a replacement for code review by a human, but it should be used as a first-pass to find certain categories of issues prior to code review. It is also not a replacement for unit or functional testing. It can, however, improve the overall quality of your code by automatically identifying issues that have rather straight-forward fixes and help guide developers to follow coding best practices.
 
 This article will explain the tools and how to go through the maturity levels:
 
@@ -26,12 +26,12 @@ This article will explain the tools and how to go through the maturity levels:
 5. Enforce in pre-commit check
 
 # Tools for Static Code Analysis
-There are a number of tools available to analyze Java code.  In this post I will focus on three open-source tools: [Checkstyle][checkstyle-url], [FindBugs][findbugs-url] and [PMD][pmd-url]. I feel that the combination of these three tools addresses the needs of the majority of software development projects. However, there are also a number of good commercial tools available as well that you may consider, particularly if you have a large codebase (and large budget).
+There are a number of tools available to analyze Java code. In this post I will focus on three open-source tools: [Checkstyle][checkstyle-url], [FindBugs][findbugs-url] and [PMD][pmd-url]. I feel that the combination of these three tools addresses the needs of the majority of software development projects. However, there are also a number of good commercial tools available as well that you may consider, particularly if you have a large codebase (and large budget).
 
 ## [Checkstyle][checkstyle-url]
 As the name implies, Checkstyle focused on insuring that Java code adheres to a particular coding standard as defined by a set of rules. There are default rules for [Sun Code Conventions][sun-codeconv] and [Google Java Style][goog-codeconv] and you can also customize the rules to match your organizations coding standards.
 
-Most issues that Checkstyle reports are not really functional issues, but represent violations of generally accepted best practices and coding conventions.  When other maintainers take up the code, violations such as these _can_ lead to functional issues down the line due to the fact that the code may be hard to understand or is overly complex.
+Most issues that Checkstyle reports are not really functional issues, but represent violations of generally accepted best practices and coding conventions. When other maintainers take up the code, violations such as these _can_ lead to functional issues down the line due to the fact that the code may be hard to understand or is overly complex.
 
 ### Example Violations
 The following code will be flagged with the following ruleset violations:
@@ -54,7 +54,7 @@ if (LOGGER.isDebugEnabled()) {
 }
 ```
 
-Perhaps not a big deal, but the code is certainly more readable.  The [full list of rules for Checkstyle][checkstyle-rules] contains many more patterns that can be added or removed from your customized ruleset (or you can just use the default [sun_checks.xml][sun-checks] or [google_checks.xml][google-checks]).
+Perhaps not a big deal, but the code is certainly more readable. The [full list of rules for Checkstyle][checkstyle-rules] contains many more patterns that can be added or removed from your customized ruleset (or you can just use the default [sun_checks.xml][sun-checks] or [google_checks.xml][google-checks]).
 
 ## [FindBugs][findbugs-url]
 Again, as the name implies, FindBugs attempts to find software defects in Java code. It looks for a number of known bug patterns and reports those as violations. It's possible that some of the violations reported are "false negatives" so you will have to examine and analyze the code to see if the issue should be fixed.
@@ -79,7 +79,7 @@ assertEquals(newStr, "pop");
 ```
 
 ## [PMD][pmd-url]
-Nobody is quite sure [what PMD stands for][pmdmeaning-url], but, similar to FindBugs, it looks for common programming flaws in Java code.  But notice the operative word '_flaw_' instead of '_bug_'. PMD casts a slightly wider net and looks for things such as 'unused variables, empty catch blocks, unnecessary object creation, and so forth.' The end result is PMD will find things that Checkstyle and FindBugs do not (although there is some overlap with FindBugs). Also, PMD supports multiple languages, not just Java. For clean, quality code most issues reported by PMD should be fixed, although "false negatives" are also possible.
+Nobody is quite sure [what PMD stands for][pmdmeaning-url], but, similar to FindBugs, it looks for common programming flaws in Java code. But notice the operative word '_flaw_' instead of '_bug_'. PMD casts a slightly wider net and looks for things such as 'unused variables, empty catch blocks, unnecessary object creation, and so forth.' The end result is PMD will find things that Checkstyle and FindBugs do not (although there is some overlap with FindBugs). Also, PMD supports multiple languages, not just Java. For clean, quality code most issues reported by PMD should be fixed, although "false negatives" are also possible.
 
 ### Example Violations
 
@@ -97,7 +97,7 @@ private int getSum(int foo, int bar) {
 }
 ```
 
-Perhaps the above code was a result of a copy-paste error.  The correct code should be:
+Perhaps the above code was a result of a copy-paste error. The correct code should be:
 
 ```java
 private int getProduct(int foo, int bar) {
@@ -111,7 +111,7 @@ private int getSum(int foo, int bar) {
 }
 ```
 
-If we assume the above private methods were not referenced in the class, PMD would also report the violation `UnusedPrivateMethod`.  Since that would mean these methods are 'dead code' perhaps they should be removed.
+If we assume the above private methods were not referenced in the class, PMD would also report the violation `UnusedPrivateMethod`. Since that would mean these methods are 'dead code' perhaps they should be removed.
 
 ## Commercial Tools
 There are also a number of commercial static-analysis tools. In some cases they find more and different issues than the open source tools, particularly security related issues, but they are pricey. In addition most offer an integrated system to track each violation or vulnerability and can track the workflow through resolution of each issue which is very useful with a large codebase. They also may support additional languages beyond just Java.
@@ -123,7 +123,7 @@ There are also a number of commercial static-analysis tools. In some cases they 
 The next section will discuss how to begin using Checkstyle, FindBugs and PMD in your IDE.
 
 # Use Tools in IDE
-The most immediate way to benefit from static code analysis tools is to use those tools directly in your IDE.  In a way, a compiler is the most basic of such tools.  The compiler analyzes the code and will give you the specific line of code that cause the compilation error. Static code analysis tools take this further and compares your code to a set of predefined (and customizable) rules and reports different types of 'rule violations'.
+The most immediate way to benefit from static code analysis tools is to use those tools directly in your IDE. In a way, a compiler is the most basic of such tools. The compiler analyzes the code and will give you the specific line of code that cause the compilation error. Static code analysis tools take this further and compares your code to a set of predefined (and customizable) rules and reports different types of 'rule violations'.
 
 Most IDEs offer a plugin architecture that allow additional tools to be added. By running these tools in your IDE you can find and fix issues as you write the code.
 
@@ -149,9 +149,9 @@ I don't use NetBeans either, but here are come links to NetBeans plugins:
 * [FindBugs Plugin](http://plugins.netbeans.org/plugin/912/findbugs-tm-plugin)
 * [EasyPmd](http://plugins.netbeans.org/plugin/57270/easypmd)
 
-Make sure that the IDE plugins for these tools are using the same rulesets (or superset of rulesets) as are used in the Maven configuration.  Otherwise your IDE plugin may not report issues (or may report additional issues) compared to your Maven build and Jenkins job. 
+Make sure that the IDE plugins for these tools are using the same rulesets (or superset of rulesets) as are used in the Maven configuration. Otherwise your IDE plugin may not report issues (or may report additional issues) compared to your Maven build and Jenkins job. 
 
-Other IDEs will also likely offer plugins for Checkstyle, FindBugs and PMD.  Even if you use a bare-bones text editor you can still use these tools as part of your normal development process by integrating them into your build process (e.g. Maven, Ant or Gradle).
+Other IDEs will also likely offer plugins for Checkstyle, FindBugs and PMD. Even if you use a bare-bones text editor you can still use these tools as part of your normal development process by integrating them into your build process (e.g. Maven, Ant or Gradle).
 
 The following section will describe how to integrate these tools into your Maven build.
 
@@ -269,7 +269,7 @@ Jenkins plugins are required for reporting the results of each tool in the Jenki
 
 ## Run maven goals in Jenkins job
 
-If you already have a Jenkins commit job and you included the tools in the tools in the verify execution phase then you shouldn't need to do anything additional to have to do anything additional.  Just make sure that the expected result files are generated.
+If you already have a Jenkins commit job and you included the tools in the tools in the verify execution phase then you shouldn't need to do anything additional to have to do anything additional. Just make sure that the expected result files are generated.
 
 But to be sure, you can list the tools goals explicitly on the Maven command like the following:
 
@@ -277,7 +277,7 @@ But to be sure, you can list the tools goals explicitly on the Maven command lik
 
 ## Publish Analysis Results in Jenkins Job
 
-To publish the results of the tools you add a post-build step for each tool reporter.  Note that you need to install the appropriate Jenkins plugin before these options are available.
+To publish the results of the tools you add a post-build step for each tool reporter. Note that you need to install the appropriate Jenkins plugin before these options are available.
 
 ![jenkins-maven-postbuild-menu](/assets/static-analysis/jenkins-postbuild-menu.jpg)
 
@@ -287,11 +287,11 @@ To publish the results of the tools you add a post-build step for each tool repo
 
 Once the results are published as part of the Jenkins job, the reporters can be configured to mark the build as unstable or failed if the number of violations exceeds a certain threshold. Or a previous build can be used as a reference point so the build will be marked unstable or failed if any new warnings are reported.
 
-The configuration of all the result publishers are similar.  The below screenshot show the FindBugs publisher advanced configuration for Status Thresholds that will mark the build as failed for one high priority violation or unstable for five and failed for ten violations of any priority.
+The configuration of all the result publishers are similar. The below screenshot show the FindBugs publisher advanced configuration for Status Thresholds that will mark the build as failed for one high priority violation or unstable for five and failed for ten violations of any priority.
 
 ![jenkins-postbuild-findbugs-thresholds](/assets/static-analysis/jenkins-postbuild-findbugs-thresholds.jpg)
 
-The below screenshots shows the advanced configuration that will mark the build as failed for one _new_ high priority violation or unstable for five and failed for ten _new_ violations of any priority, using the last stable build as a reference.  This type of configuration let's you "grandfather" existing violations, only changing the build state for new violations.
+The below screenshots shows the advanced configuration that will mark the build as failed for one _new_ high priority violation or unstable for five and failed for ten _new_ violations of any priority, using the last stable build as a reference. This type of configuration let's you "grandfather" existing violations, only changing the build state for new violations.
 
 ![jenkins-postbuild-findbugs-relativethresholds](/assets/static-analysis/jenkins-postbuild-findbugs-relativethresholds.jpg)
 
