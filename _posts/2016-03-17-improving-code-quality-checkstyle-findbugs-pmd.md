@@ -289,7 +289,7 @@ Once the results are published as part of the Jenkins job, the reporters can be 
 
 The configuration of all the result publishers are similar.  The below screenshot show the FindBugs publisher advanced configuration for Status Thresholds that will mark the build as failed for one high priority violation or unstable for five and failed for ten violations of any priority.
 
-![jenkins-postbuild-findbugs-thresholds](../assets/static-analysis/jenkins-postbuild-findbugs-thresholds.jpg)
+![jenkins-postbuild-findbugs-thresholds](/assets/static-analysis/jenkins-postbuild-findbugs-thresholds.jpg)
 
 The below screenshots shows the advanced configuration that will mark the build as failed for one _new_ high priority violation or unstable for five and failed for ten _new_ violations of any priority, using the last stable build as a reference.  This type of configuration let's you "grandfather" existing violations, only changing the build state for new violations.
 
