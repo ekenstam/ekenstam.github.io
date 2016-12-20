@@ -144,7 +144,7 @@ I don't use IntelliJ, but here are some links to IntelliJ plugins:
 * [FindBugs-IDEA Plugin](https://plugins.jetbrains.com/plugin/3847)
 
 ## NetBeans Plugins
-I don't use NetBeans either, but here are come links to NetBeans plugins:
+I don't use NetBeans either, but here are some links to NetBeans plugins:
 
 * [Checkstyle Beans](http://plugins.netbeans.org/plugin/3413/checkstyle-beans)
 * [FindBugs Plugin](http://plugins.netbeans.org/plugin/912/findbugs-tm-plugin)
@@ -270,7 +270,7 @@ Jenkins plugins are required for reporting the results of each tool in the Jenki
 
 ## Run maven goals in Jenkins job
 
-If you already have a Jenkins commit job and you included the tools in the tools in the verify execution phase then you shouldn't need to do anything additional to have to do anything additional. Just make sure that the expected result files are generated.
+If you already have a Jenkins commit job and you included the tools in the verify execution phase then you shouldn't need to do anything additional. Just make sure that the expected result files are generated.
 
 But to be sure, you can list the tools goals explicitly on the Maven command like the following:
 
@@ -300,12 +300,6 @@ The below screenshots shows the advanced configuration that will mark the build 
 
 Eing Ong has written a blog on adding enforcement of thresholds to [pre-commit checks using GitHub webhooks](http://eing.github.io/technology/2016/02/29/Git-Pre-Commit-Hooks-Part2/).
 
-# Next Steps
-
-## Other Non-Java Tools
-
-* JSHint Plug-in - http://github.eclipsesource.com/jshint-eclipse/updates/
-* JSHint/JSLint
 
 <!-- Link references -->
 [wiki-page]: https://en.wikipedia.org/wiki/Static_program_analysis
