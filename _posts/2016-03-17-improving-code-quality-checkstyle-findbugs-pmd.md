@@ -16,7 +16,7 @@ So, what is [Static Code Analysis][wiki-page]? It doesn't have anything to do wi
 > [Never send a human to do a machine’s job.](http://quotegeek.com/quotes-from-movies/the-matrix/1284/)
 > -- <cite>Agent Smith, The Matrix</cite>
 
-I agree with Agent Smith that machine's are much better suited to some tasks than humans are. These tools can search through every line of code looking for patterns that indicate a possible issue. It is impossible to have the same degree of thoroughness without the automation of these tools. That said, static code analysis is not a replacement for code review by a human, but it should be used as a first-pass to find certain categories of issues prior to code review. It is also not a replacement for unit or functional testing. It can, however, improve the overall quality of your code by automatically identifying issues that have rather straight-forward fixes and help guide developers to follow coding best practices.
+I agree with Agent Smith that machines are much better suited to some tasks than humans are. These tools can search through every line of code looking for patterns that indicate a possible issue. It is impossible to have the same degree of thoroughness without the automation of these tools. That said, static code analysis is not a replacement for code review by a human, but it should be used as a first-pass to find certain categories of issues prior to code review. It is also not a replacement for unit or functional testing. It can, however, improve the overall quality of your code by automatically identifying issues that have rather straight-forward fixes and help guide developers to follow coding best practices.
 
 This article will explain the tools and how to go through the maturity levels:
 
@@ -258,7 +258,7 @@ Once the configuration of the plugs is declared in `pluginManagement`, the plugi
 
 # Report in Jenkins
 
-Now that the tools are run as a normal part of your Maven build it is very easy to report the results of Checkstyle, FindBugs and PMD as part of the 'commit build' Jenkins job.
+Now that the tools are run as a normal part of your Maven build it is very easy to report the results of Checkstyle, FindBugs and PMD as part of the 'commit build' Jenkins job of your CI/CD workflow. If you are not using a CI/CD workflow then this could be added to a "nightly" build that runs once per day. Regardless of which approach is used, the process to add static analysis reporting is the same.
 
 The goal is to resolve all the 'High Priority' FindBugs warnings and, overtime, reduce the number of 'Normal Priority' FindBug warnings and the warnings from other tools.
 
