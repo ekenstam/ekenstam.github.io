@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Migrating to AWS, Part 1 — Application Cloud Readiness"
-thumbnail: /assets/cloud/AWS_Simple_Icons_AWS_Cloud.png
+thumbnail: /assets/cloud/aws-cloud-icon.png
 published: true
 categories: ['Software Development','Cloud Computing']
 tags: cloud aws microservices encryption resiliancy
@@ -30,7 +30,7 @@ Many companies expose their web services (microservices) to the Internet through
 
 If the application is not a web service (e.g. a batch process, etc.) then on-boarding to the API Gateway may not be necessary. If your service will not use an API Gateway then you may need to implement additional functionality, such as throttling and security, in the service itself.
 
-[![AWS API Gateway Diagram](/assets/cloud/RequestProcessingWorkflow.jpg)](https://aws.amazon.com/api-gateway/details/)
+[![AWS API Gateway Diagram](/assets/cloud/aws-RequestProcessingWorkflow.jpg)](https://aws.amazon.com/api-gateway/details/)
 
 ### Implement API Gateway Authorization/Enforcement
 
