@@ -6,10 +6,10 @@ description: >
   Todd Ekenstam's blog on software development and quality engineering.
 
 # Your information
-#email: todd_ekenstam@intuit.com
+#email: todd_ekenstam at intuit.com
 author: Todd Ekenstam
 avatar: "//www.gravatar.com/avatar/40fa67613bdf295e20afb402dca91739?d=mm&s=135"
-profile: Todd is a software engineer at Intuit working on improving the quality of web services and web applications with a focus on test automation, static code analysis and continuous integration.
+profile: Todd is a software engineer at Intuit working on improving the quality of web services and web applications with a focus on web services, test automation, continuous integration/deployment and cloud computing.
 #twitter_username: twitter_username
 github_username: ekenstam
 linkedin_username: tekenstam
